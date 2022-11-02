@@ -1,0 +1,609 @@
+*Algoritmo es una serie de pasos para resolver un problema:
+	.finito
+	.no puede ser ambiguo
+	.debe tener una finalidad
+
+*Actualizar todos los paquetes de pip
+	.pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+
+-alt+p para que se vuelva a escribir la sentencia anterior
+
+- >>>: esto es promt
+
+-El código fuente de python tiene extensión py
+-El código objeto(código ejecutable, ejecutable software) tiene extensión pyc
+
+-cuando se ejecuta el código fuente este se pasa a código objeto
+
+-es aconsejable usar la guia de estilos pep 8 para el desarrollo de código python
+
+-En python cada instrucción debe ir en una linea
+
+-Pueden ir mas de una instrucción en una linea pero deben ir
+ separadas por ; pero es una practica desaconsejada
+
+-los comentarios van con #
+
+-python es un lenguaje de tipado lo que hace que no sea necesario definir
+ el tipo de variable ya que dependiendo del tipo de dato que se le pase
+ python le agregará el tipo
+
+-si queremo añadir una variable global para una clase debemos:
+	.global nombre_variable
+
+-las variables de clase tienen un alcance de todos los objetos que pertenezcan a la clase 
+
+-para dividir una instrucción en mas de una linea debemos usar \
+ ej: mi_nombre = "mi nombre es\
+ 					Eduardo"
+
+-python trabaja con indentación
+
+-luego de los : debemos dejar cuatro espacios de indentación
+
+-instalamos en sublime text el package sublimeREPL que sirve para 
+ ejecutar el interprete de nodejs, python, etc dentro de sublime
+
+-luego en tools vamos a sublimeREPL y seleccionamos python
+
+-tipos de datos en pyton: numericos(int,float,complejos), textos, booleanos(true,false)
+
+-operadores: Aritméticos, Compración, Lógicos, Asignación, Especiales
+
+-variable: espacio en la memoria del ordenador donde se almacenará un valor que podrá
+			cambiar durante la ejecución del programa
+
+-el operador // nos devuelve el resultado entero de una división
+
+-en python todo es un objeto
+
+-la función type() devuelve el tipo de variable
+
+-los textos con """ podemos crear un texto con saltos de linea
+
+-con print podemos imprimir en consola el valor de las variables
+
+-con el if podemos comparar variables o valores ej:
+	if numero1>numero2:
+		print("El numero 1 es mayor")
+	else:
+		print("El numero 2 es mayor")
+
+-si queremos imprimir directamente variables en el print:
+	.print "esta es la variable 1: %d" % variable //%d es para números, %s es para Strings
+
+-funcion conjunto de lineas de código agrupadas que realizan una tarea específica
+
+-a las funciones se les denomina "métodos" cuando se encuentran definidas dentro de una clase
+
+-las funciones sirven para reutilizar código
+
+-para definir una función:
+	def nombre_funcion(parámetros):
+		instrucciones de la función
+		return(opcional)
+
+-tenemos funciones predefinidas como print() y propias
+
+-si guardamos un archivo python y lo queremos ejecutar presionamos ctrl+b o
+ vamos a tools->build
+
+-python pasa los parametros por referencia
+
+-las listas son estructuras de datos que nos permiten almacenar una gran cantidad
+ de valores
+
+-las listas pueden guardar diferente tipo de valores
+
+-se pueden expandir dinámicamente añadiendo nuevos elementos
+
+-nombreLista=[elem1,elem2,elem3]
+
+#Listas
+-para imprimir la lista:
+	print(miLista[:])
+
+-si queremos acceder a una posición especifica de la lista:
+	print(miLista[2])
+
+-si le pasamos un indice negativo a la lista python comienza
+ a buscar desde el ultimo elemento
+
+-para acceder a mas de un elemento
+	print(miLista[0:3]) #El elemento 3 lo excluye
+
+-para agregar mas elementos a la lista
+	miLista.append("Nombre") #Esto lo agrega al final de la lista
+
+-para agregar un elemento en una posición especifica de la lista
+	miLista.insert(2,"Nombre") 
+
+-para agregar mas de un elemento
+	miLista.extend(["Nombre1","Nombre2","Nombre3"])
+
+-para saber la posición de un elemento dentro de una lista
+	miLista.index("Nombre")
+ Si existe mas de un elemento con el mismo nombre, solo devuelve la posición del primer elemento
+
+-para saber si un elemento se encuentra en la lista:
+	print("Nombre" in miLista)
+
+-para eliminar un elemento de una lista
+	miLista.remove("Nombre")
+	miLista.remove(posicion)
+
+-para eliminar el ultimo elemento de la lista
+	miLista.pop()
+
+-podemos sumar listas
+	miLista3=miLista+miLista2
+
+-para repetir una lista
+	miLista["elem1","elem2"]*3
+ lo anterior repetirá la lista 3 veces
+
+ ##Listas 2
+-el tipo de dato list se define asi: nombre = [el1,el2,el3,el4,el5,el6], no es necesario agregarle elementos
+-se puede acceder a través de sus indices asi: nombre[indice]
+-tambien se puede utilizar el operador in ej: 10 in nombre
+-tambien se puede utilizar la función len(),min(),max() si contiene strings devuelve el menor o mayor deacuerdo al orden
+ abecedario
+-dentro de una lista se puede incluir distintos tipos de datos
+-con dir(list) podemos ver los metodos que tiene el objeto list
+-con .append(elemento) podemos agregar un elemento a la lista
+-.extend([elemento1],[elemento2]) sirve para agregar uno o mas elementos si a los elementos no le agregamos los
+corchetes nos agrega cada palabra como un elemento a la lista
+-.pop() nos permite eliminar el ultimo elemento de una lista
+y ademas lo devuelve por lo que lo podemos pasar a otro elemento, también le podemos pasar un indice.
+-.remove(elemento) también nos permite eliminar pero a través
+de su contenido y no con su indice
+-los elemento de las listas no son excluyentes por lo que el
+elemento de una lista´puede aparecer mas de una vez
+-con .count(elemento) podemos ver la cantidad de veces que
+un elemento aparece en la lista.
+-.reverse() da vuelta la lista.
+-.insert(indice,elemento) permite agregar un elemento y pasar el indice donde se va a insertar
+-.index(elemento) nos devuelve la posición dentro de la lista
+donde se encuentra el elemento, pero si el elemento no se 
+encuentra en la lista devuelve un error.
+-.clear() remueve todos los elementos de una lista
+-.copy() devuelve una copia de la lista
+
+#Tuplas
+
+-las tuplas son listas inmutables, no permiten añadir, eliminar, mover elementos
+  no permiten extraer posiones
+  si permiten comprobar si un elemento se encuentra en la tupla
+
+-las ventajas de las tuplas respecto a las listas:
+ 	.mas rápidas
+ 	.menos espacio(mayor optimización)
+ 	.Formatean Strings
+ 	.Pueden utilizarse como claves en un diccionario
+
+-la sintaxis de las tuplas
+ 	nombreLista=(elem1,elem2,elem3)
+
+-los elementos de las tuplas a diferencia de la lista deben estar () es opcional
+  pero si es recomendado colocar los ()
+
+-para acceder a un elemento de la tupla
+
+-para convertir una tupla en lista
+	miLista=list(miTupla)
+
+-para convertir una lista en tupla
+	miTupla=tupple(miLista)
+
+-para saber cuantas veces se encuentra un elemento dentro de una tupla
+	print(miTupla.count("elem"))
+
+-para saber la longitud de una tupla
+	print(len(miTupla))
+
+-para crear una tupla unitaria debemos agregar una , luego del primer elemento
+	miTupla("elem",)
+
+-para desempaquetar una tupla
+	nombre,dia,mes,agno=mitupla
+ el numero de variables debe ser igual al numero de elementos dentro de la tupla
+
+#Diccionarios
+-dentro de un diccionario podemos almacenar numeros, cadenas de textos, listas, otros diccionarios
+-los datos almacenados se asocian a una clave de tal forma que se crea una asociación
+ de tipo clave:valor
+-los elementos almacenados no están ordenados
+-crear diccionario
+	midiccionario={"Clave":"Valor"}
+
+#Condicionales
+-Flujo de ejecución del programa es el orden que sigue el programa a la hora de ejecutarse
+-Operadores:
+	.> o >=
+	.< o <=
+	.==
+	.!=
+
+#Bucle
+-Existen bucles determinados y indeterminados
+-la sintaxis es: for variable in elemento a recorrer:
+
+#Clases
+-para crear una clase:
+	class NombreClase:
+		pass
+
+-se debe utilizar CamelCase
+
+-si imprimos la clase podemos ver:
+	.<__main__.MiPrimeraClase object at 0x01267178> //luego del at es el espacio en memoria que ocupa
+
+-para instanciar un objeto:
+	.nombreObjeto = Clase()
+
+-mientras ejecutamos el código le podemo agregar atributos directamente al objeto:
+	.instanciaObjeto.atributo = valor
+
+-debemos agregar self a todos los metodos que creemos en una clase ya que para
+ python casi todos son objetos por lo que cuando inicialicemos un objeto con
+ self le decimos que ese metodo es de esa instancia
+
+-no es necesario que se llame self pero si se le debe dar un argumento a todos los metodos
+ del objeto
+
+-también podemos llamar directamente al método de la clase con:
+	.Clase.metodo()
+
+
+-para inicializar valores en una clase de python lo podemos hacer con el metodo:
+	__init__(self,paramtros):
+		#acciones
+
+-cada clase, función o método puede tener un string estandar justo despues de la definición y
+ debe estar identada como el resto del código
+
+-para crear un método estático debemos agregar al método:
+	.@staticmethod
+
+#Herencia
+-para que una clase herede de otra debemos:
+	.Clase(Clase_A_Heredar)
+
+-si queremos llamar a un método de la clase padre podemos usar:
+	.super().nombreMetodo
+
+-en python existe la herencia multiple por lo que una clase puede heredar de multiples clases
+
+-la herencia multiple no es recomendada, pero la forma mas util y mas simple de una herencia 
+ multiple es llamada mixin, mixin es una super clase que no esta destinada a existir por
+ si misma sino que su destino es servir para ser heredada por otra clase
+
+-si queremos llamar a un método de la clase podremos podemos utilizar:
+	.ClasePadre.metodo()
+
+-si no queremos tener problemas con que se ejecuten dos veces un método de la clase abuelo(problema
+ de diamante) podemos utilizar super()
+
+#DocString
+-los docString son string que debe estar encerrado entre comillas dobles o simples
+
+-los docstring son string que explican la función del metodo esto lo podemos definir
+ con:
+ 	."" o '' si es en una linea
+ 	.""" o ''' si es mas largo que una linea
+
+-para luego ver los comentarios que agregamos podemos ejecutar en la consola:
+	.python -i nombreArchivo.py
+	.help(NombreClase)
+	.help(nombreMetodo)
+
+*Para ejecutar un programa con lectura de la consola debemos ir a tools->sublime REPL
+->python->Run Current File
+*Si desean crear una combinación de teclas para acceder al REPL de Python pueden hacer lo siguiente:
+1. Vayan a Preferences > Key Bindings - User
+2. En el panel de User (la parte derecha) coloquen el siguiente código dentro de los corchetes que aparecen:
+
+{ "keys": ["ctrl+alt+b"], "command": "run_existing_window_command", "args":
+{
+    "id": "repl_python_run",
+    "file": "config/Python/Main.sublime-menu"
+}}
+
+3. Guarden (Ctrl + s)
+
+-para que no se cree un salto de linea en un print podemos ocupar el argumento end=""
+ .print("texto",end="")
+
+- los numeros enteros su tipo de dato es int y los numeros decimales su tipo de dato es float point
+
+-se pueden introducir mas de una instrucción ej:
+	.print("Hola"); print("Hola Mundo")
+
+-para escribir el valor de una variable en mas de una linea lo hacemos con:
+	.mi_nombre="mi nombre es\
+				Eduardo"
+
+- los operadores matematicos son + - * / 
+
+- la sintaxis es conjunto de reglas que especifican las combinaciones de simbolos que son legales en python
+
+- area de un cuadrado o rectangulo area = ancho por alto
+
+-las variables no pueden empezar por numeros
+
+-deben empezar por letra o subrayado
+
+-solo pueden contener letras; numeros o subrayados
+
+-las letras pueden ser mayusculas o minusculas
+
+-si el nombre de una variable tiene dos palabras se separa con subrallado
+
+-el nombre de las variables no pueden contener espacios
+
+-las funciones son trozos de codigos que nos permiten realizar tareas
+
+-las funciones deben tener un nombre y se llaman a traves de este
+
+-la funcion dir (), pasandole el argumento __builtins__ nos devuelve una lista de las funciones preconstruidas de python
+
+-los parametros son variables que se deben pasar en la llamada funcion
+
+-max(argumento,argumento)esta funcion te devuelve el numero mayor se le pueden pasa
+ numeros enteros y decimales, se le pueden pasar mas de 2 argumentos
+
+-pow(numero,numero)esta funcion eleva los numeros que se hallan escrito
+
+-abs(numero) devuelve el valor absoluto de un numero
+
+-help(nombre_funcion) devuelve una descripcion de una funcion pre construida
+
+-return delvuelve el valor
+
+-ejemplo de funcion: def doble (parametro) :
+                      return parametro*2
+
+-def sirve para definir una funcion
+
+-la diferencia entre parametro y argumento es que los parametros son los que se le pasan
+  en el def y los argumentos son cuando se pasan en la llamada a la funcion
+
+-para sacar el area de un triangulo se multuplica el ancho y el alto y luego se divide
+
+-el tipo de dato de las letras se les llama strings
+
+-string es un congunto de letras y van escrito entre comillas
+
+-podemos usar caracteres de escape para mostrar comillas dentro de un string \"
+
+-con el operador + podemos concatenar strings
+
+-print() sirve para mostrar un texto pasandole argumento ejemplo : print("hola", "mundo")
+
+-print muestra los datos sin comillas ya se puede utilizar para un programa
+ y no es necesario que el usuario sepa el tipo de data que se esta utilizando
+
+-##esto sirve para escribir comentarios
+
+-input() sirve para hacer una pregunta al usuario
+
+-input solamente devuelve tipos de datos string
+
+-las triples comillas son para escribir en distintas lineas
+
+#CARACTERES DE ESCAPE
+
+ \" para escribir comillas dentro de un string
+
+ \t para dejar un espacio dentro de un string
+
+ \n para hacer un salto de linea(escribir debajo)
+ 
+ \\ para escribir una barra dentro de un string
+------------------------------------------------------
+
+--un docstring es un mensaje de ayuda que saldra cuando escribamos help(nombre_metodo)
+  y debe empezar con ''' y terminar con ''' dentro de esas comillas va la descripcion del metodo
+
+-los operadores de comparacion son < > == =!, los operadores logicos son not(), and y or
+
+#CONVERSION DE TIPOS DE DATOS
+
+-int()   para convertirlo a entero
+-str()   para convertirlo a string
+-float() para convertirlo a float
+
+#MODULOS
+-help('modules') devuelve una lista de modulos
+-Los modulos son funciones,variables,modulos,operadores
+-help('modules') para ver todos los modulos
+-los modulos son archivos de extension .py que almacenan funciones que pueden ser importadas
+-si queremos utilizar algun modulo tenemos que usar:
+ import nombre_modulo
+-si queremos instanciar una clase del modulo:
+	.objeto = nombre_modulo.Clase()
+-si queremos solamente importar una clase del modulo:
+	.from nombre_modulo import Clase
+	.objeto = Clase()
+-si queremos darle un alias a la clase:
+	.from nombre_modulo import Clase as Cl
+	.objeto = Cl()
+-podemos importar mas de una clase separandolas con , 
+-si queremos importar todas las clases de un modulo
+	.from nombre_modulo import *
+
+-si queremos un listado de las funciones que contienen los modulos se usa dir(nombre_modulo)
+
+#Paquetes
+-un paquete es una colección de modulos que se encuentran en un mismo directorio
+-el nombre del paquete es el nombre que tendra el directorio
+-no podemos colocar modulos dentro de otros modulos por lo que utilizaremos paquetes
+-para crear paquete le debemos informar a python que el directorio es un paquete por
+ lo que debemos crear un archivo vacio con el nombre __init__.py
+
+#Imports
+-en python podemos usar dos tipos de sintaxis para importar el uso de imports
+	.imports absolutos
+	.imports relativos
+
+-en los imports absolutos tenemos que especificar la ruta completa al modulo,funcion o clase
+ que queremos importar 
+
+-los imports usan los . como separador
+
+-si queremos importar el modulo alumno que se encuentra en Directorio Padre > escolar > alumnos.py
+ desde el directorio padre podriamos utilizar:
+ 	.import escolar.alumnos.Alumno = escolar.alumnos.Alumno()
+ 	.from escolar.alumnos import Alumno
+ 	.from escolar import alumnos
+ 	 alumno = alumnos.Alumno()
+
+-los imports relativos no necesitamos especificar la ruta completa
+
+-si queremos importar el modulo database que se encuentra dentro del mismo directorio en el que
+ estamos trabajando:
+ 	.From .database import Database
+
+-si lo llamamos desde un directorio inferior
+	.From ..database import Database
+
+-si queremos importar un objeto ya instanciado:
+	.class Database:
+		#implementación
+		database = Database()
+	.from escolar.database(modulo)
+	 import database(objeto)
+
+-si queremos importar directamente el objeto db desde algún modulo sin tener que escribir la ruta completa,
+ debemos agregar en el archivo __init__.py del paquete donde se encuentra el archivo que queremos
+ exportar ej:
+ en el escolar/__init__.py:
+ .from .database import db
+ en el archivo a importar:
+ .from escolar import db
+
+
+
+-cada vez que importemos nuestro modulo todas las funciones que se encuentren dentro de este 
+ se ejecutarán, si no queremos que esto suceda debemos crear la función main() dentro del modulo:
+ .class ClaseUtil:
+ 	def main():
+ 		util = ClaseUtil()
+ 		print(util)
+
+ 	if __name__ == "__main__":
+ 		main()
+
+-cada modulo cuenta con variables especiales, python usa los __ para las variables especiales
+
+-cuando definimos el metodo main() este solo se ejecutará solo cuando estemos utilizando el módulo
+ como un script
+
+-con if __name__ comprobamos que el metodo main no se ejecute cuando lo importemos desde otros
+ modulos y solo se ejecute cuando lo llamemos como programa
+
+#Orden de un programa en python
+-los métodos van en clases
+-las clases van en módulos
+-los módulos van en paquetes
+
+
+#strings
+-con los strings tambien se pueden usar los operadores de comparacion y devuelven true o false
+-si uno compara dos strings con > o < devuelve true o false dependiendo de si se encuentra primera
+ en el alfabeto
+-la funcion in devuelve si se encuentra la palabra en la otra ej videotutoriales in tutoriales
+-la funcion len devuelve el tamaño de la palabra
+-palabra[indice] devuelve el caracter que se encuentra en el indice
+-palabra[indiceInicial:indiceFinal] devuelve un trozo de la palabra (subString)
+-si no de le pone el indice final o el del inicio lo autocompleta
+-.lower(palabra) devuelve la palabra en minuscula
+-.count(palabra,indiceDesdeCualBuscar) devulve el numero de veces que aparece una palabra, tambien se le puede poner 
+                                       un indice desde el cual buscar
+-.capitalize() nos devuelve la primera letra en mayuscula
+-.find(palabra,indiceDesdeCualBuscar) nos devuelve le caracter en el que se encuentra,el indice es opcional
+-.rfind(palabra)devuelve el indice de la palabra buscada pero empieza a buscar desde la derecha(el ultimo)
+-.strip()quita los espacios iniciales y finales a las palabras
+-.title()retorna un string en donde el primer carácter de cada palabra será convertida a mayúscula
+
+##Condicionales
+-los condicionales son if,elif,else
+-type(dato) sirve para saber el tipo de dato
+
+-range(inicio,final,[iteración]) devuelve una iteración de numeros
+
+#Listas anidadas
+-se definen así: lista = [[elemento1,elemento2],[elemento1,elemento2]]
+-si colocamos lista[0] nos devuelve los primeros dos elementos de la primera lista
+-si queremos acceder al primer elemento de la primera lista
+tenemos que escribir lista[0][0]
+-para saber el tamaño de una lista lo hacemos con len(lista[indice])
+
+#Control de Acceso
+-en python todos los métodos y atributos de una clase van a estar siempre disponible
+-si queremos sugerir que un método no debe ser accedido publicamente debemos colocar una 
+ nota en el docstring e indicamos si el método solo debe usarse para usos internos
+-una convención es prefijar un atributo o un método con el uso de un caracter subrayado
+-si la prefijamos con un doble subrayado significa una doble advertencia y que si usamos
+ este método o variable puede tener consecuencia en cuanto funcionamiento del código
+-el uso de estos subrayados en el nombre se le llama Name Mangling(mutilado de nombre)
+-estos subrayados deben ir al inicio
+-si es que le colocamos doble subrayado a un atributo de la clase esta modifica su funcionamiento,
+ por lo que luego si queremos llamar al atributo de esta clase debemos agregar _ al llamado de la clase
+ y luego llamar al atributo
+
+#Archivos
+-con open('rutadelarchivo',mode) podemos trabajar con archivos
+ mode puede tener los valores 'r'=leer,'w'=escribir,'a'=añadir,'r+'=leer y escribir
+-ej:biedma_archivo = 'D:/Respaldo/curso-python/biedma.txt' ##guardamos la ruta dle archivo
+    open(biedma_archivo,'r') ## abrimos el archivo
+    biedma.readline() ## para leer una linea del archivo
+    biedma.readlines() ## para leer todas las lineas del archiv
+    biedma.close() ## para cerrar el archivo
+
+#Librerias para Data Science
+import numpy as np
+import pylab as pl
+%pylab inline
+
+-Para unir rutas es recomendable usar el paquete os ya que
+ preiviene los errores de que se haya dejado un espacio en blanco
+ en la ruta:
+ 	.os.path.join(ruta1,ruta2)
+
+#Expresiones Regulares
+-para usar las expresiones regulares en Python debemos importar la librería re
+	.import re
+
+-luego para crear un patron lo hacemos con:	
+	.patron = re.compile(r'EXPRESION') //NO LE AGREGAMOS LOS /EXPRESION/
+
+-para hacer el match de la Expresión con el Texto:
+	.re.match(patron, texto)
+
+-para imprimir las agrupaciones lo hacemos con:
+	.res.group(num)
+
+
+
+#Tkinter
+-para escribir un archivo primero debemos importar un modulo con
+ import tkinter.filedialog
+-luego con la linea tkinter.filedialog.askopenfilename() se nos abrira una ventana emergente
+ para seleccionar un archivo que queremos copiar
+-con tkinter.filedialog.asksaveasfilename() indicamos el nombre y dónde se guardara el archivo
+-despues debemos abrir el archivo que queremos copiar y abrir el archivo al que le queremos 
+ copiar el contenido pero con el modo escritura y con: .write(contenido)
+
+
+
+
+{'value':e.target.textContent}
+
+onChange={(e)=>handleInputChange({target:{name:'centroCosto',value:e.target.textContent}})}
+
+
+Docuware Desarrollo = 
+https://dimacofi-test.docuware.cloud
+
+20dbe621-f16a-4d79-aea1-aa277fcf2eaf
